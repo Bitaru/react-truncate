@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import map from 'lodash/map';
 
 export default class Truncate extends Component {
     static propTypes = {
@@ -302,7 +303,7 @@ export default class Truncate extends Component {
 
         if (typeof window !== 'undefined' && mounted) {
             if (lines > 0) {
-                text = getLines().map(renderLine);
+                text = map(getLines(), renderLine);
             } else {
                 text = children;
 
